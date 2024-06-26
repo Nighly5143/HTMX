@@ -35,18 +35,20 @@ class ProductController extends Controller
 
 
     public function store(Request $request) {
+        
         $validator = Validator::make($request->all(), [
             'name' =>'required',
+            'desc' =>'required',
             'price' =>'required',
-            'desc' => 'required',
             'qty' =>'required'
         ]);
 
         if($validator->fails()) {
             $products = Product::orderBy('name');
-            return view('templates._error', ['errors' => $validator->errors()->all(), 'products' => $products]);
+            return view('templates._error', ['errors' => $validator->errors(), 'products' => $products]);
 
         };
+
         $products = Product::orderBy('name');
 
         Product::create($request->all());
