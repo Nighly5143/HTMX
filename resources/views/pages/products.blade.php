@@ -25,12 +25,12 @@
     </div>
 
     <div class="modal fade" id="editProductModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="editProductLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content" id="editProductContent">
-                
-            </div>
+    <div class="modal-dialog">
+        <div class="modal-content" id="editProductContent">
+            
         </div>
     </div>
+</div>
 
     <div id="products_list" class="p-5 bg-gray-100" hx-get="/api/products" hx-trigger="load delay:500ms" hx-swap="innerHTML">
 
